@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SNP INFORMATION</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Libre+Baskerville"
+    />
+    <style>
+      body {
+        background: url("https://images.unsplash.com/photo-1483871788521-4f224a86e166?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+          center center fixed;
+        background-size: cover;
+        background-color: #f0f0f0;
+      }
+      nav a {
+        font-family: "Libre Baskerville", serif;
+        font-size: 1.9em;
+        font-weight: bolder;
+        display: inline-block;
+        color: black;
+        text-align: center;
+
+        text-decoration: none;
+        border-radius: 50px;
+        padding: 15px;
+        transition: 0.8s;
+      }
+
+      /* Change color on hover */
+      nav a:hover {
+        background-color: grey;
+        color: black;
+        transform: scale(0.8, 0.8);
+      }
+
+      table {
+        width: 45%;
+        margin: 10px auto;
+        background-color: white;
+        border-collapse: collapse;
+        border: 8px solid #333;
+        border-radius: 16px;
+        overflow: hidden;
+      }
+
+      th,
+      td {
+        border: 8px solid #ddd;
+        padding: 8px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #333;
+        color: white;
+      }
+
+      .cen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .pal {
+        padding: 20px;
+      }
+      .scroll {
+        width: 80%;
+        margin: 0 auto;
+      }
+    </style>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body>
+   <div id="scroll"> <center class="pal">
+    <header>
+      <nav>
+        <a href="home.html">Home</a> <a href="snp.html">SNP-info</a
+        ><a href="pred.html">Prediction Page</a>
+      </nav>
+    </header>
+  </center>
+  <center class="cen">
+    <img
+      src="images\noun-wheat-6308874.svg"
+      id="i1"
+      width="50px"
+      alt="SVG loading"
+    />
+    <h2
+      style="
+        text-align: center;
+        color: #000000;
+        font-size: 3em;
+        font-family: Libre Baskerville, serif;
+      "
+    >
+      <i> SNP INFORMATION</i>
+    </h2>
+    <img
+      src="images\noun-wheat-6308874.svg"
+      id="i2"
+      width="50px"
+      alt="SVG loading"
+    />
+  </center>
+
+  <table>
+    <thead>
+      <tr>
+        <th>SNP 🧬</th>
+        <th>Position📍</th>
+      </tr>
+    </thead>
+    <tbody id="snpTableBody"></tbody>
+</div>
+      <script>
+        snps = [
+          "AX-94462858",
+          "AX-95071247",
+          "AX-94646188",
+          "AX-94776946",
+          "AX-94702181",
+          "AX-94477591",
+          "AX-94710748",
+          "AX-94440104",
+          "AX-94480569",
+          "AX-94524677",
+          "AX-94547219",
+          "AX-94670667",
+          "AX-94572618",
+          "AX-94663690",
+          "AX-94998259",
+          "AX-94475556",
+          "AX-94534637",
+          "AX-94823460",
+          "AX-94978875",
+          "AX-95224988",
+          "AX-94944591",
+          "AX-94541833",
+          "AX-94628115",
+          "AX-94981573",
+        ];
+
+        pos = [
+          553146272, 143438568, 78343644, 647927975, 105412667, 635264767,
+          326464823, 59213510, 478555437, 514593813, 513572057, 479876161,
+          591524581, 45354900, 555325353, 586102229, 517524441, 86398896,
+          25633098, 547810743, 157862189, 3740808, 462228297, 116377176,
+        ];
+
+        var tableBody = document.getElementById("snpTableBody");
+
+        for (var i = 0; i < snps.length; i++) {
+          var row = tableBody.insertRow();
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          cell1.innerHTML = snps[i];
+          cell2.innerHTML = pos[i];
+        }
+      </script>
+    </table>
+  </body>
+</html>
